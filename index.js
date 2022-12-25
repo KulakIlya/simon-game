@@ -3,8 +3,6 @@ let gamePattern = [];
 let userClickedPattern = [];
 let level = -1;
 
-
-
 // Events
 
 $(".btn").on("click", function () {
@@ -27,8 +25,8 @@ $(document).on("keypress", function (event) {
 // Functions
 
 function playSound(currentColor) {
-  // const sound = new Audio(`/sounds/${currentColor}.mp3`);
-  // sound.play();
+  const sound = new Audio(`/sounds/${currentColor}.mp3`);
+  sound.play();
 }
 
 function nextSequence() {
