@@ -16,7 +16,7 @@ $(".btn").on("click", function () {
 });
 
 $(document).on("keypress", function (event) {
-  if (event.which === 97 && level + 1 === 0) {
+  if ((event.which === 97 || event.which === 1092) && level + 1 === 0) {
     nextSequence();
   }
 })
