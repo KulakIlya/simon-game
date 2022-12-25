@@ -9,7 +9,6 @@ $(".btn").on("click", function () {
   userChosenColor = this.id
   userClickedPattern.push(userChosenColor);
 
-  console.log(userClickedPattern.length)
   checkAnswer(userClickedPattern.length - 1);
 
   playSound(userChosenColor);
@@ -25,7 +24,7 @@ $(document).on("keypress", function (event) {
 // Functions
 
 function playSound(currentColor) {
-  const sound = new Audio(`/sounds/${currentColor}.mp3`);
+  const sound = new Audio(`./sounds/${currentColor}.mp3`);
   sound.play();
 }
 
@@ -51,16 +50,9 @@ function animatePress(currentColor) {
 }
 
 function checkAnswer(currentElem) {
-
-  console.log(userClickedPattern[currentElem])
-  console.log(gamePattern[currentElem])
-
   if (userClickedPattern[currentElem] === gamePattern[currentElem]) {
-    console.log("+");
-    if (userClickedPattern.length === gamePattern.length) {
-
+    if (userClickedPattern.length === gamePattern.length)
       setTimeout(() => nextSequence(), 1000);
-    }
   } else {
     $("body").addClass("game-over");
     setTimeout(() => {
@@ -70,7 +62,6 @@ function checkAnswer(currentElem) {
     playSound("wrong");
     restart();
   }
-
 }
 
 function restart() {
